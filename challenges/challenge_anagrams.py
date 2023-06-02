@@ -2,9 +2,11 @@ def quick_sort(string):
     if len(string) <= 1:
         return string
     position = string[0]
+    # aqui eu já percorro no for e salvo no meu [] tudo dentro da mesma linha
     smaller = [i for i in string if i < position]
     bigger = [i for i in string if i > position]
     equal = [i for i in string if i == position]
+    # o .join serve para transformar em string uma lista
     return (
          quick_sort(''.join(smaller))
          + ''.join(equal)
@@ -13,6 +15,7 @@ def quick_sort(string):
 
 
 def is_anagram(first_string, second_string):
+    # o lower serve para colocar minha string em minusculo
     first_lower = first_string.lower()
     second_lower = second_string.lower()
     string_first = quick_sort(first_lower)
